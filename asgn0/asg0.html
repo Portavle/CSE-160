@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Draw a blue rectangle (canvas version)</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="example" width="400" height="400">
+      Please use a browser that supports "canvas"
+    </canvas>
+
+    <div style = "display: flex; padding: 5px;">
+      <p style = "margin-top: 0px; margin-bottom: 0px;">v1: (</p>
+      <input type = "number" id = "v1_x" style = "field-sizing: content; min-width: 40px;"></input>
+      <p style = "margin-top: 0px; margin-bottom: 0px;">, </p>
+      <input type = "number" id = "v1_y" style = "field-sizing: content; min-width: 40px;"></input>
+      <p style = "margin-top: 0px; margin-bottom: 0px;">)</p>
+    </div>
+
+    <div style = "display: flex; padding: 5px;">
+      <p style = "margin-top: 0px; margin-bottom: 0px;">v2: (</p>
+      <input type = "number" id = "v2_x" style = "field-sizing: content; min-width: 40px;"></input>
+      <p style = "margin-top: 0px; margin-bottom: 0px;">, </p>
+      <input type = "number" id = "v2_y" style = "field-sizing: content; min-width: 40px;"></input>
+      <p style = "margin-top: 0px; margin-bottom: 0px;">)</p>
+    </div>
+
+    <button id = "draw" onclick = "handleDrawEvent()">Draw!</button>
+    
+    <br>
+    <br>
+
+    <div style = "display: flex;">
+      <p style = "margin-top: 0px; margin-bottom: 0px; margin-right: 5px;">Operation: </p>
+      <select id = "op">
+        <option value="add" selected>Add</option>
+        <option value="sub">Subtract</option>
+        <option value="mult">Multiply</option>
+        <option value="div">Divide</option>
+      </select>
+      <p style = "margin-top: 0px; margin-bottom: 0px; margin-right: 5px; margin-left: 5px;">Scalar: </p>
+      <input type = "number" id = "scalar" style = "field-sizing: content; min-width: 40px;"></input>
+    </div>
+    <button id = "draw" onclick = "handleDrawOperationEvent()">Draw!</button>
+
+    <script src = "../lib/cuon-matrix-cse160.js"></script>
+    <script src = "asg0.js"></script>
+  </body>
+</html>
