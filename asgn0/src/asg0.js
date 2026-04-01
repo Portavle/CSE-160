@@ -43,6 +43,11 @@ function handleDrawEvent() {
   drawVector(v2, "blue");
 }
 
+function areaTriangle(v1, v2) {
+  let tv = Vector3.cross(v1, v2);
+  return tv.magnitude() / 2;
+}
+
 function handleDrawOperationEvent() {
   let v1_x = document.getElementById("v1_x").value;
   let v1_y = document.getElementById("v1_y").value;
@@ -53,22 +58,46 @@ function handleDrawOperationEvent() {
   let op_command = document.getElementById("op").value;
   let op_scalar = document.getElementById("scalar").value;
 
-  let v3;
-  let v4;
+  let v3 = new Vector3(v1.elements);
+  let v4 = new Vector3(v2.elements);
   switch(op_command) {
     case "add":
-      v3 = new Vector3([v1.elements[0] + v2.elements[0], v1.elements[1] + v2.elements[1], 0]);
+      v3.add(v2);
+      v4.mul(0);
       break;
     case "sub":
-      v3 = new Vector3([v1.elements[0] - v2.elements[0], v1.elements[1] - v2.elements[1], 0]);
+      v3 = v1.sub(v2);
+      v4.mult(0);
       break;
-    case "mult":
-      v3 = new Vector3([v1.elements[0] * op_scalar, v1.elements[1] * op_scalar, 0]);
-      v4 = new Vector3([v2.elements[0] * op_scalar, v2.elements[1] * op_scalar, 0]);
+    case "mul":
+      v3 = v3.mul(op_scalar);
+      v4 = v4.mul(op_scalar);
       break;
     case "div":
-      v3 = new Vector3([v1.elements[0] / op_scalar, v1.elements[1] / op_scalar, 0]);
-      v4 = new Vector3([v2.elements[0] / op_scalar, v2.elements[1] / op_scalar, 0]);
+      v3 = v3.div(op_scalar);
+      v4 = v4.div(op_scalar);
+      break;
+    case "mag":
+      v3 = v3.mul(0);
+      v4 = v4.mul(0);
+      console.log("Magnitude v1: " + v1.magnitude());
+      console.log("Magnitude v2: " + v2.magnitude());
+      break;
+    case "norm":
+      v3 = v3.normalize();
+      v4 = v4.normalize();
+      break;
+    case "angle":
+      v3 = v3.mul(0);
+      v4 = v4.mul(0);
+      let dot = Vector3.dot(v1, v2);
+      let angle = Math.acos(dot / (v1.magnitude() * v2.magnitude())) / Math.PI * 180;
+      console.log("Angle: " + angle);
+      break;
+    case "area":
+      v3 = v3.mul(0);
+      v4 = v4.mul(0);
+      console.log("Area of the triangle: " + areaTriangle(v1, v2));
       break;
   }
 
