@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Change a point color</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <div>
+        <div>
+          <p>Aidan Knight</p>
+          <p>aimknigh@ucsc.edu</p> <br>
+          <p>Notes to Grader:</p>
+          <p>Used multiple scripts and wrote Triangle.js a lil different to match both the drawing and example.</p>
+        </div>
+      <br>
+
+      <button id="clear">Clear Canvas</button>
+      <button id="create">Draw Drawing</button>
+
+      <br><br>
+
+      <a>Drawing Mode:</a>
+
+      <div display="inline-flex">
+        <button id="setSquare">Squares</button>
+        <button id="setTriangle">Triangles</button>
+        <button id="setCircle">Circles</button>
+      </div>
+
+      <br>
+
+      <a>Shape Color:</a>
+
+      <div display="inline-flex">
+        <a>Red:</a>
+        <input type="range" id="red" min="0" max="1" step="any" value="1">
+        <a>Green:</a>
+        <input type="range" id="green" min="0" max="1" step="any" value="1">
+        <a>Blue:</a>
+        <input type="range" id="blue" min="0" max="1" step="any" value="1">
+      </div>
+
+      <div display="inline-flex">
+        <a>Shape Size:</a>
+        <input type="range" id="shape_size" min="5" max="40" step="any">
+        <a>(Circles)Segment Count:</a>
+        <input type="range" id="segment_count" min="3" max="20" step="1" value="10">
+      </div>
+    </div>
+
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+    <script src="Asgn2.js"></script>
+    <script src="CreateDrawing.js"></script>
+    <script src="Circle.js"></script>
+    <script src="Trangle.js"></script>
+    <script src="Point.js"></script>
+  </body>
+</html>
