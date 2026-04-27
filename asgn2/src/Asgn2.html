@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Change a point color</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400">
+    Please use a browser that supports "canvas"
+    </canvas>
+
+    <div>
+        <div>
+          <p>Aidan Knight</p>
+          <p>aimknigh@ucsc.edu</p> <br>
+          <p>Notes to Grader:</p>
+          <p>Eagle based on the Eagle enemy in Mewgenics. Poke them for their head to wobble in a random direction!</p>
+        </div>
+      <br>
+
+      <button id="clear">Toggle Anim</button>
+
+      <br><br>
+
+      <br>
+
+      <div display="inline-flex">
+        <a>Head Rotate Z:</a>
+        <input type="range" id="red" min="-90" max="90" step="1" value="0">
+        <a>Head Rotate X:</a>
+        <input type="range" id="blue" min="-15" max="45" step="1" value="0">
+        <a>Wings:</a>
+        <input type="range" id="green" min="-90" max="0" step="1" value="0">
+      </div>
+
+      <div display="inline-flex">
+        <a>Camera angle:</a>
+        <input type="range" id="angleSlide" min="-180" max="180" step="1" value="0">
+      </div>
+    </div>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="Asgn2.js"></script>
+    <script src="Circle.js"></script>
+    <script src="Trangle.js"></script>
+    <script src="Point.js"></script>
+    <script src="Cube.js"></script>
+  </body>
+</html>
