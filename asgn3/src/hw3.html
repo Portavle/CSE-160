@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Space World</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="400" height="400"  style="position: fixed; top: 0px; left: 0px; cursor: none;">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <div style="display: flex; justify-content: center;">
+    <canvas id="2d" width="700" height="200"  style="position: fixed; bottom: 0px; cursor: none;">
+    Please use a browser that supports "canvas"
+    </canvas>
+    </div>
+    
+    <!-- <div display="inline-flex" style="position: fixed; top: 10px; left: 10px">
+      <p style="color: white; display: inline;">Camera angle:</p>
+      <input type="range" id="angleSlide" min="-180" max="180" step="1" value="0">
+    </div>
+    <div display="inline-flex" style="position: fixed; top: 40px; left: 10px">
+      <button id="changeShader"> Change Shader</button>
+    </div> -->
+    <div display="inline-flex" style="position: fixed; top: 40px; left: 10px">
+      <p style="color: white; display: inline;" id="FPS"></p>
+    </div>
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-matrix.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="TextureCube.js"></script>
+    <script src="TextureSphere.js"></script>
+    <script src="TextureSurface.js"></script>
+    <script src="TexturePolygon.js"></script>
+    <script src="TextBox.js"></script>
+    <script src="hw3.js"></script>
+  </body>
+</html>
